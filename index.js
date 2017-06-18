@@ -33,11 +33,11 @@ function module_copy(list,           // @arg ModulesListArrayObject - [ { from: 
   list.forEach(fromTo => {
     let { from, to } = fromTo;
 
-    if (!from || from.length) {
+    if (!from || !from.length) {
       console.error(`Error: { from: ${from}, to: ${to} }, from is empty`);
       return;
     }
-    if (!to || to.length) {
+    if (!to || !to.length) {
       console.error(`Error: { from: ${from}, to: ${to} }, to is empty`);
       return;
     }
@@ -118,7 +118,7 @@ function _copyToLocal(from, to, jsonURL, es6jsURL, property, remote) {
   if (jsonURL) {
     _fetch(jsonURL, "json", json => {
       if (!(property in json)) {
-        _jsonKeywordNotFound();
+        _jsonPropertyNotFound();
       } else {
         _fetch(es6jsURL + json[property], "string", es6js => {
           fs.writeFile(to, es6js, "utf8", () => {});
@@ -134,13 +134,13 @@ function _copyToLocal(from, to, jsonURL, es6jsURL, property, remote) {
   }
 
   function _success() {
-    console.log(`Copy ${from} to ${to}`);
+    console.log(`  module copy ${from} to ${to}`);
   }
-  function _jsonKeywordNotFound() {
-    console.error(`json property ${property} is not found in ${jsonURL}`);
+  function _jsonPropertyNotFound() {
+    console.error(`  error json property ${property} is not found in ${jsonURL}`);
   }
   function _fetchError(error, url, code) {
-    console.error(`Error ${from} to ${to}, code=${code}`);
+    console.error(`  fetch error ${from} to ${to}, code=${code}`);
   }
 }
 

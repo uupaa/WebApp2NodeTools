@@ -9,9 +9,7 @@
   },
   "main": "index.js",
   "scripts": {},
-  "devDependencies": {
-    "request": ""
-  },
+  "devDependencies": {},
   "author": "uupaa.js@gmail.com",
   "license": "MIT"
 }
