@@ -1,6 +1,6 @@
 {
   "name": "webapp2-node-tools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "WebApp/2 node tools",
   "keywords": [ "WebApp/2", "webapp2" ],
   "repository": {
@@ -8,8 +8,9 @@
     "url": "git+https://github.com/uupaa/WebApp2NodeTools.git"
   },
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts": {},
+  "devDependencies": {
+    "request": ""
   },
   "author": "uupaa.js@gmail.com",
   "license": "MIT"
