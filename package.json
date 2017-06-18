@@ -1,6 +1,6 @@
 {
   "name": "webapp2-node-tools",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "WebApp/2 node tools",
   "keywords": [ "WebApp/2", "webapp2" ],
   "repository": {
